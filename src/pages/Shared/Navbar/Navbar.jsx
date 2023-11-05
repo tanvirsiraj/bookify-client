@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-white shadow-lg">
+    <div className="bg-white fixed top-0 z-50 w-full  shadow-lg">
       <nav className="max-w-7xl mx-auto flex items-center justify-between py-4  text-black px-2 lg:px-0">
         <div className="flex items-center gap-2">
           <BiBookReader className="text-primary-color text-3xl" />
@@ -39,8 +39,8 @@ const Navbar = () => {
         <ul
           className={
             toggle
-              ? "-left-[600px] duration-500 lg:duration-0  absolute lg:static bg-primary-color lg:bg-white text-white lg:text-black  shadow-lg lg:shadow-none top-0 h-[100%]  max-w-[600px] lg:w-auto  ps-4 pt-20 lg:pt-0 space-y-4 lg:space-y-0  lg:flex items-center lg:gap-8"
-              : " left-0 duration-1000 lg:duration-0 absolute lg:static bg-primary-color lg:bg-white text-white lg:text-black  shadow-lg lg:shadow-none top-0 h-[100%]  w-40 md:w-80 lg:w-auto  ps-4 pt-20 lg:pt-0 space-y-4 lg:space-y-0  lg:flex items-center lg:gap-8"
+              ? "-left-[600px] z-20  duration-500 lg:duration-0  fixed  lg:static bg-primary-color lg:bg-white text-white lg:text-black  shadow-lg lg:shadow-none top-0 h-[100vh] lg:h-auto  max-w-[600px]  lg:w-auto  ps-4 pt-20 lg:pt-0 space-y-4 lg:space-y-0  lg:flex items-center lg:gap-8"
+              : " left-0 z-20 duration-1000 lg:duration-0 fixed lg:static bg-primary-color lg:bg-white text-white lg:text-black  shadow-lg lg:shadow-none top-0 h-[100vh] lg:h-auto  w-40 md:w-80 lg:w-auto  ps-4 pt-20 lg:pt-0 space-y-4 lg:space-y-0  lg:flex items-center lg:gap-8"
           }
         >
           <li>

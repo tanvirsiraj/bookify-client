@@ -1,0 +1,41 @@
+.bg-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../assets/img/banner1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: scaleAnimation 15s linear infinite;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+} /* Adjust the opacity to make the overlay darker or lighter */
+
+/* .bg-container:hover {
+  animation: none;
+} */
+@keyframes scaleAnimation {
+  0% {
+    background-size: 100%;
+  }
+
+  100% {
+    background-size: 180%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  @keyframes scaleAnimation {
+    0% {
+      background-size: 100%;
+    }
+
+    100% {
+      background-size: 100%;
+    }
+  }
+}
