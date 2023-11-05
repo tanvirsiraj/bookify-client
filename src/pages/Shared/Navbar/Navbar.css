@@ -1,0 +1,47 @@
+li,
+a {
+  position: relative;
+}
+a.active {
+  color: #ff4f01;
+  transition: all 200ms;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 2px;
+  background: #ff4f01;
+  width: 100%;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 2px;
+  background: #ff4f01;
+  width: 100%;
+  transition: height 2s;
+  visibility: visible;
+  transform: scaleX(1);
+  transition: all 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  a.active {
+    color: white;
+  }
+
+  a::after {
+    background: white;
+  }
+  a.active::after {
+    background: white;
+  }
+}
