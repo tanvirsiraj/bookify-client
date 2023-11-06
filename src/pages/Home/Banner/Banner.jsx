@@ -5,7 +5,7 @@ import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div className="hero mb-40 min-h-screen bg-container">
+    <div className="hero  min-h-screen bg-container">
       <div className="overlay"></div>
       <div className="hero-content  text-center text-neutral-content">
         <div className="max-w-xl">

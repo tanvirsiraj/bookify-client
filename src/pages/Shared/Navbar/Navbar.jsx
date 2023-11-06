@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-white fixed top-0 z-50 w-full  shadow-lg">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between py-4  text-black px-2 lg:px-0">
+      <nav className="max-w-6xl mx-auto flex items-center justify-between py-4  text-black px-2 lg:px-0">
         <div className="flex items-center gap-2">
           <BiBookReader className="text-primary-color text-3xl" />
           <Link
