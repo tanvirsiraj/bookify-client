@@ -1,0 +1,34 @@
+[
+  {
+    "StudentName": "Henry Thompson",
+    "img": "https://i.ibb.co/MSbyqVn/5.webp",
+    "description": "Bookify's extensive library cultivates a dynamic community, providing a diverse collection of literary treasures, fostering meaningful interactions, and igniting a passion for reading among users worldwide."
+  },
+  {
+    "StudentName": "Michael Anderson",
+    "img": "https://i.ibb.co/yFsNz7p/11.jpg",
+    "description": "Bookify's extensive library cultivates a dynamic community, providing a diverse collection of literary treasures, fostering meaningful interactions, and igniting a passion for reading among users worldwide."
+  },
+  {
+    "StudentName": "Marvin Patel",
+    "img": "https://i.ibb.co/s1S4FFR/9.jpg",
+    "description": "Bookify's extensive library cultivates a dynamic community, providing a diverse collection of literary treasures, fostering meaningful interactions, and igniting a passion for reading among users worldwide."
+  },
+  {
+    "StudentName": "Barney Stinson",
+    "img": "https://i.ibb.co/ZdmPYdn/3.jpg",
+
+    "description": "Bookify's extensive library cultivates a dynamic community, providing a diverse collection of literary treasures, fostering meaningful interactions, and igniting a passion for reading among users worldwide."
+  },
+  {
+    "StudentName": "Robin Wilson",
+    "img": "https://i.ibb.co/z7rTtxL/2.jpg",
+    "description": "Bookify's extensive library cultivates a dynamic community, providing a diverse collection of literary treasures, fostering meaningful interactions, and igniting a passion for reading among users worldwide."
+  },
+  {
+    "StudentName": "Noah Lee",
+    "img": "https://i.ibb.co/hLbDd8r/12.jpg",
+
+    "description": "Bookify's extensive library cultivates a dynamic community, providing a diverse collection of literary treasures, fostering meaningful interactions, and igniting a passion for reading among users worldwide."
+  }
+]
