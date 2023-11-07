@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BiBookReader } from "react-icons/bi";
 import "./Navbar.css";
+import { AuthContext } from "../../../Context/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [toggle, setToggle] = useState(true);
   // console.log(toggle);
   const [theme, setTheme] = useState(
@@ -22,6 +25,16 @@ const Navbar = () => {
     } else {
       setTheme("light");
     }
+  };
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        // console.log("User Logout Successfully");
+      })
+      .catch((error) => {
+        // console.log(error.message);
+      });
   };
 
   return (
@@ -63,14 +76,62 @@ const Navbar = () => {
               Borrowed Books
             </NavLink>
           </li>
-          <div className="lg:hidden">
-            <Link to="login">Login</Link>
-          </div>
+          <li className="list-none">
+            {user ? (
+              <div className="lg:hidden  items-center px-2">
+                <div className="flex items-center">
+                  <span className="text-black">{user.displayName}</span>
+                  <div className="avatar">
+                    <div className="w-12 rounded-full mx-2">
+                      <img src={user.photoURL} />
+                    </div>
+                  </div>
+                </div>
+                <Link
+                  onClick={handleLogout}
+                  className="lg:hidden bg-white text-primary-color px-4 py-2 rounded-md duration-500 hover:bg-black "
+                >
+                  Logout
+                </Link>
+              </div>
+            ) : (
+              <Link
+                className="lg:hidden bg-white text-primary-color px-4 py-2 rounded-md duration-500 hover:bg-black font-semibold hover:text-white"
+                to="/login"
+              >
+                Login
+              </Link>
+            )}
+          </li>
         </ul>
         <div className="flex items-center gap-3">
-          <div className="hidden lg:block bg-primary-color px-4 text-white py-2 rounded-md text-lg font-semibold">
-            <Link to="login">Login</Link>
-          </div>
+          <li className="list-none">
+            {user ? (
+              <div className="hidden lg:block  items-center px-2">
+                <div className="flex items-center">
+                  <span className="text-white">{user.displayName}</span>
+                  <div className="avatar">
+                    <div className="w-12 rounded-full mx-2">
+                      <img src={user.photoURL} />
+                    </div>
+                  </div>
+                </div>
+                <Link
+                  onClick={handleLogout}
+                  className="lg:hidden bg-white text-primary-color px-4 py-2 rounded-md duration-500 hover:bg-black "
+                >
+                  Logout
+                </Link>
+              </div>
+            ) : (
+              <Link
+                className="hidden lg:block bg-primary-color text-white px-4 py-2 rounded-md duration-500 hover:bg-black font-semibold hover:text-white"
+                to="/login"
+              >
+                Login
+              </Link>
+            )}
+          </li>
           <div className="mt-2 lg:mt-0">
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}

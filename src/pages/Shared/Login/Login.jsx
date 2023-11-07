@@ -1,7 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../../assets/img/login.webp";
 import { FcGoogle } from "react-icons/fc";
+import { useContext, useState } from "react";
+
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../Context/AuthProvider";
+
 const Login = () => {
+  const { signInUser, signInWithGoogle } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  // console.log(location);
+  const [error, setError] = useState("");
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -9,7 +21,47 @@ const Login = () => {
     const password = form.password.value;
 
     console.log(email, password);
+
+    // signInUser
+    signInUser(email, password)
+      .then((result) => {
+        // console.log(result.user);
+        form.reset();
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "User Logged-in successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   };
+
+  // google signin
+  const hanldeGoogleSignIn = () => {
+    console.log("google");
+    signInWithGoogle()
+      .then((result) => {
+        console.log("google signin", result.user);
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "User Logged-in successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div className="mt-16 md:mt-32 -mb-10">
       <div className="hero-content max-w-6xl mx-auto text-center grid md:grid-cols-4">
@@ -53,7 +105,7 @@ const Login = () => {
                 required
               />
             </div>
-
+            {error ? <p className="text-red-600  bg-white p-1">{error}</p> : ""}
             <div className="form-control mt-6">
               <button className="btn bg-transparent border-primary-color duration-300 text-primary-color hover:border-black hover:bg-transparent  hover:text-primary-color text-lg md:text-xl capitalize font-semibold">
                 Login
@@ -61,7 +113,10 @@ const Login = () => {
             </div>
 
             <p className="text-lg text-black my-4">Or Login with</p>
-            <button className="btn bg-transparent border-primary-color duration-300 text-primary-color hover:border-primary-color hover:bg-transparent  hover:text-black text-lg capitalize font-semibold">
+            <button
+              onClick={hanldeGoogleSignIn}
+              className="btn bg-transparent border-primary-color duration-300 text-primary-color hover:border-primary-color hover:bg-transparent  hover:text-black text-lg capitalize font-semibold"
+            >
               <FcGoogle />
               <span className="text-xl">Google</span>
             </button>

@@ -10,7 +10,7 @@ const Category = ({ category }) => {
       <div className="text-center mb-4 mt-4">
         <p className="font-semibold text-base">{categoryName}</p>
         <Link
-          to="{`/allproducts/${brandName}`}"
+          to={`/books/${categoryName}`}
           className="duration-300 bg-primary-color text-white py-2 px-4  rounded-md inline-block mt-4   text-lg hover:bg-black hover:text-white"
         >
           View All

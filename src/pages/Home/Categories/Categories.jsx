@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import SectionHeading from "../../Shared/SectionHeading/SectionHeading";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Category from "./Category/Category";
 import { useQuery } from "@tanstack/react-query";

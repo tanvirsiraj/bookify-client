@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../../../assets/img/register.png";
+import Swal from "sweetalert2";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const Register = () => {
+  const { createUser, profileUpdate } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -9,7 +16,42 @@ const Register = () => {
     const photoUrl = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+
+    setError("");
+
+    if (password.length < 6) {
+      setError("Password can not be less than 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setError("Password doesn't have a capital letters");
+      return;
+    } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)) {
+      setError("Password doesn't have a special characters");
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        // console.log(result.user);
+        profileUpdate(name, photoUrl)
+          .then(() => {})
+          .catch(() => {});
+        form.reset();
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "User Signed Up successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        // console.log(error.message);
+        setError(error.message);
+      });
   };
+
   return (
     <div className="mt-16 md:mt-32 -mb-10">
       <div className="hero-content max-w-6xl mx-auto text-center grid md:grid-cols-4">
@@ -82,6 +124,9 @@ const Register = () => {
               />
             </div>
 
+            {error && (
+              <p className="text-red-600 font-semibold bg-white p-1">{error}</p>
+            )}
             <div className="form-control mt-6">
               <button
                 type="submit"
