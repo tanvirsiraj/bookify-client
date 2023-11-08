@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const BookDetails = () => {
   const data = useLoaderData();
   console.log(data);
-  const { img, name, authorName, description, rating, category } = data;
+  const { _id, img, name, authorName, description, rating, category } = data;
   return (
     <div className="max-w-4xl mx-auto mt-32">
       <div className="mx-2 lg:mx-0 py-4 bg-white shadow-md border rounded-lg relative    md:grid md:grid-cols-5 md:items-center  px-2 ">
@@ -30,7 +30,7 @@ const BookDetails = () => {
             />
             <div className="card-actions  mt-6">
               <Link
-                to=""
+                to={`/readBooks/${_id}`}
                 className=" bg-black text-white py-1 px-3 rounded  duration-300 hover:bg-primary-color capitalize"
               >
                 Read
