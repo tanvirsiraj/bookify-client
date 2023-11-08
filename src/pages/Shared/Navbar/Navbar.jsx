@@ -53,7 +53,7 @@ const Navbar = () => {
           className={
             toggle
               ? "-left-[600px] z-20  duration-500 lg:duration-0  fixed  lg:static bg-primary-color lg:bg-white text-white lg:text-black  shadow-lg lg:shadow-none top-0 h-[100vh] lg:h-auto  max-w-[600px]  lg:w-auto  ps-4 pt-20 lg:pt-0 space-y-4 lg:space-y-0  lg:flex items-center lg:gap-8"
-              : " left-0 z-20 duration-1000 lg:duration-0 fixed lg:static bg-primary-color lg:bg-white text-white lg:text-black  shadow-lg lg:shadow-none top-0 h-[100vh] lg:h-auto  w-40 md:w-80 lg:w-auto  ps-4 pt-20 lg:pt-0 space-y-4 lg:space-y-0  lg:flex items-center lg:gap-8"
+              : " left-0 z-20 duration-1000 lg:duration-0 fixed lg:static bg-primary-color lg:bg-white text-white lg:text-black  shadow-lg lg:shadow-none top-0 h-[100vh] lg:h-auto  w-48 md:w-80 lg:w-auto  ps-4 pt-20 lg:pt-0 space-y-4 lg:space-y-0  lg:flex items-center lg:gap-8"
           }
         >
           <li>
@@ -78,18 +78,20 @@ const Navbar = () => {
           </li>
           <li className="list-none">
             {user ? (
-              <div className="lg:hidden  items-center px-2">
-                <div className="flex items-center">
-                  <span className="text-black">{user.displayName}</span>
+              <div className="lg:hidden    items-center ">
+                <div className="flex items-center mb-6">
+                  <span className="text-white text-sm md:text-base">
+                    {user.displayName}
+                  </span>
                   <div className="avatar">
-                    <div className="w-12 rounded-full mx-2">
+                    <div className="w-10 md:w-12 rounded-full mx-2">
                       <img src={user.photoURL} />
                     </div>
                   </div>
                 </div>
                 <Link
                   onClick={handleLogout}
-                  className="lg:hidden bg-white text-primary-color px-4 py-2 rounded-md duration-500 hover:bg-black "
+                  className="lg:hidden bg-white  text-primary-color px-4 py-2 rounded-md duration-500 hover:bg-black "
                 >
                   Logout
                 </Link>
@@ -105,11 +107,11 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="flex items-center gap-3">
-          <li className="list-none">
+          <li className="list-none ">
             {user ? (
-              <div className="hidden lg:block  items-center px-2">
+              <div className="hidden lg:flex  items-center px-2">
                 <div className="flex items-center">
-                  <span className="text-white">{user.displayName}</span>
+                  <span className="text-black">{user.displayName}</span>
                   <div className="avatar">
                     <div className="w-12 rounded-full mx-2">
                       <img src={user.photoURL} />
@@ -118,7 +120,7 @@ const Navbar = () => {
                 </div>
                 <Link
                   onClick={handleLogout}
-                  className="lg:hidden bg-white text-primary-color px-4 py-2 rounded-md duration-500 hover:bg-black "
+                  className=" bg-primary-color text-white px-4 py-2 rounded-md duration-500 hover:bg-black "
                 >
                   Logout
                 </Link>
