@@ -1,13 +1,27 @@
 import { Rating } from "@smastrom/react-rating";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 import axios from "axios";
+import gif1 from "../../assets/img/gif1.gif";
 
 const BookDetails = () => {
   const data = useLoaderData();
+  // console.log(data);
   const [currentQuantity, setCurrentQuantity] = useState(data.quantity || 0);
+  const { axiosSecure } = useAxiosSecure();
+  const [borrowedBook, setBorrowedBook] = useState({});
   const { user } = useContext(AuthContext);
+
+  const url = `http://localhost:5000/borrowedBook?id=${data._id}`;
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      console.log(res.data);
+      setBorrowedBook(res.data);
+    });
+  }, []);
   //   console.log(data);
   const {
     _id,
@@ -20,12 +34,20 @@ const BookDetails = () => {
     category,
   } = data;
 
+  const handleBorrowClick = () => {
+    if (borrowedBook) {
+      document.getElementById("my_modal_2").showModal();
+    } else {
+      document.getElementById("my_modal_1").showModal();
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const returnDate = form.returnDate.value;
     const borrowDate = form.borrowDate.value;
-    console.log(borrowDate, returnDate);
+    // console.log(borrowDate, returnDate);
     const userName = user.displayName;
     const email = user.email;
     console.log(name, email);
@@ -49,9 +71,9 @@ const BookDetails = () => {
       const qty = parseInt(quantity) - 1;
 
       // update book quantity
-
+      const url = `http://localhost:5000/updateQuantity/${_id}`;
       axios
-        .put(`http://localhost:5000/updateQuantity/${_id}`, { qty })
+        .put(url, { qty })
         .then((res) => {
           console.log(res);
           setCurrentQuantity(qty);
@@ -62,11 +84,19 @@ const BookDetails = () => {
 
       // added to borrowed Books
 
-      const url = `http://localhost:5000/borrowedBooks`;
+      const urlSecond = "http://localhost:5000/borrowedBooks";
       axios
-        .post(url, borrowedBooks)
+        .post(urlSecond, borrowedBooks)
         .then((res) => {
-          console.log(res);
+          if (res.data.insertedId) {
+            Swal.fire({
+              position: "top-center",
+              icon: "success",
+              title: "You have borrowed the book successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -105,12 +135,11 @@ const BookDetails = () => {
               {/* Open the modal using document.getElementById('ID').showModal() method */}
               <button
                 className="bg-primary-color text-white py-1 px-3 rounded  duration-300 hover:bg-black capitalize"
-                onClick={() =>
-                  document.getElementById("my_modal_1").showModal()
-                }
+                onClick={handleBorrowClick}
               >
                 Borrow
               </button>
+
               <dialog id="my_modal_1" className="modal">
                 <div className="modal-box">
                   <div className="text-center">
@@ -151,6 +180,25 @@ const BookDetails = () => {
                           Submit
                         </button>
                       </div>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+
+              <dialog id="my_modal_2" className="modal">
+                <div className="modal-box ">
+                  <p className="pt-4 mb-2 text-primary-color text-center text-lg">
+                    I know You have already borrowed this book.
+                  </p>
+                  <div className="flex justify-center">
+                    {" "}
+                    <img className="w-32 h-32" src={gif1} />
+                  </div>
+                  <div className="modal-action justify-center">
+                    <form method="dialog" className="text-center">
+                      <button className="bg-primary-color text-white py-1 px-3 rounded   duration-300 hover:bg-black capitalize">
+                        Close
+                      </button>
                     </form>
                   </div>
                 </div>
