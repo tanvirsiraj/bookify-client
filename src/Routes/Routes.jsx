@@ -11,11 +11,13 @@ import CategorisedBooks from "../pages/CategorisedBooks/CategorisedBooks";
 import BookDetails from "../pages/BookDetails/BookDetails";
 import ReadBooks from "../pages/ReadBooks/ReadBooks";
 import UpdateBook from "../pages/UpdateBook/UpdateBook";
+import NotFound from "../NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",

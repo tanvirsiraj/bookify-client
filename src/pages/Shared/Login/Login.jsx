@@ -2,9 +2,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../../assets/img/login.webp";
 import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
-
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Context/AuthProvider";
+import loginGif from "../../../assets/img/login.gif";
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
@@ -64,9 +64,9 @@ const Login = () => {
 
   return (
     <div className="mt-16 md:mt-32 -mb-10">
-      <div className="hero-content max-w-6xl mx-auto text-center grid md:grid-cols-4">
+      <div className="hero-content max-w-6xl mx-auto text-center grid gap-y-12 md:grid-cols-4">
         <div className="h-full col-span-2">
-          <img src={img} className="h-full" />
+          <img src={loginGif} className="h-full" />
         </div>
         <div className="h-full col-span-2">
           {" "}

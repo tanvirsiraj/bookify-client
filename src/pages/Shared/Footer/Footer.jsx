@@ -7,7 +7,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="bg-footer mt-10 ">
+    <div className="bg-footer mt-2 md:mt-8 ">
       <div className="footer-overlay"></div>
       <div className="max-w-6xl mx-auto text-center pt-20">
         <div className="flex items-center gap-2 justify-center">
