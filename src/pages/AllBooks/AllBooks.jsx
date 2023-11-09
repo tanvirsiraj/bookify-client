@@ -1,7 +1,57 @@
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import SingleBook from "./SingleBook";
+
 const AllBooks = () => {
+  const [books, setBooks] = useState([]);
+  const axiosSecure = useAxiosSecure();
+
+  const url = `/allbooks`;
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["todos"],
+    queryFn: () =>
+      axiosSecure.get(url).then((res) => {
+        return res.data;
+      }),
+  });
+  useEffect(() => {
+    /*   const fetchData = async () => {
+      setIsLoading(true)
+      try {
+///API
+      } catch (error) {
+        ///ERROR
+      } finally {
+        setIsLoading(false)
+      } */
+
+    if (data) {
+      setBooks(data);
+    }
+  }, [data]);
+
+  if (isPending)
+    return (
+      <div className="max-w-6xl mx-auto md:my-40 flex justify-center">
+        <span className="loading  loading-spinner loading-lg"></span>
+      </div>
+    );
+
+  if (error) return "An error has occurred: " + error.message;
+
   return (
     <div>
-      <h2>All Books</h2>
+      <div className="max-w-6xl mx-auto mt-32">
+        <div className="mx-4 lg:mx-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 ">
+            {books.map((book) => (
+              <SingleBook key={book._id} book={book}></SingleBook>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -5,9 +5,10 @@ import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div className="hero  min-h-screen bg-container">
+    <div className="hero relative w-full  min-h-screen  ">
       <div className="overlay"></div>
-      <div className="hero-content  text-center text-neutral-content">
+      <div className="bg-img"></div>
+      <div className="hero-content  text-center text-neutral-content relative z-20">
         <div className="max-w-xl">
           <h1 className="mb-5 text-2xl lg:text-5xl textw font-bold ">
             Welcome <br /> To <br />

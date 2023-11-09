@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import CategorisedBooks from "../pages/CategorisedBooks/CategorisedBooks";
 import BookDetails from "../pages/BookDetails/BookDetails";
 import ReadBooks from "../pages/ReadBooks/ReadBooks";
+import UpdateBook from "../pages/UpdateBook/UpdateBook";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,16 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/bookDetails/${params.id}`),
+      },
+      {
+        path: "/updateBook/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateBook></UpdateBook>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/updateBook/${params.id}`),
       },
     ],
   },

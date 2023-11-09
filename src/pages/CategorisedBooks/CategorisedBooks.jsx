@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
-import SectionHeading from "./../Shared/SectionHeading/SectionHeading";
+
 import CategorisedBook from "./CategorisedBook";
 
 const CategorisedBooks = () => {
@@ -30,6 +30,16 @@ const CategorisedBooks = () => {
       }),
   });
   useEffect(() => {
+    /*   const fetchData = async () => {
+      setIsLoading(true)
+      try {
+///API
+      } catch (error) {
+        ///ERROR
+      } finally {
+        setIsLoading(false)
+      } */
+
     if (data) {
       setCategoryBook(data);
     }
