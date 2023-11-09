@@ -1,8 +1,30 @@
-# React + Vite
+# Bookify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Visit our website]()
 
-Currently, two official plugins are available:
+## Projects Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- This website focuses on Library Management, allowing users to borrow and return books across
+  different categories. Users can also add or update books.
+
+- There are Home, Add Book, All Books, Borrowed
+  Books, and Login in the navbar. In Home page there are a banner section and a 6 cards of category section. On clicking a category name, the user will be redirected to the books related to specific category.
+
+  On clicking the Details Button will take the user will be redirected to the bookDetails route
+
+- In bookDetails route there's two button read and borrow button.
+- Clicking the `Borrow` button, a modal will pop up. The modal will have a form requiring a
+  return date, borrow date and a Submit button. Email and Name fields will be filled by the currently logged-in
+  user’s email and displayName. By clicking the Submit button, the quantity of that specific book
+  will be reduced by 1. Also, the book will be added to the `Borrowed Books`. If the quantity
+  reduces to 0, the `Borrow` button will be disabled.
+
+- On the `Borrowed Books` page a user will only see the books that he/she has borrowed.
+- Clicking the "Return button" will increase that specific book quantity by 1, and will remove the book
+  card from the "Borrowed Books" page.
+- Clicking on the “Read” button will take the user to a different page where the user can read
+  some content of that book.
+- In All Books page user will see all categorised books. Each book will have an Update Button. Clicking on the `Update button` will redirect the user
+  to a form page where user can update a book.
+- The website have a authentication system. There's Registration and Login Page.
+- This website is responsive in all device.
