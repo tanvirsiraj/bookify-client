@@ -39,7 +39,10 @@ const AllBooks = () => {
       </div>
     );
 
-  if (error) return "An error has occurred: " + error.message;
+  if (error)
+    return (
+      <p className="text-center my-4">An error has occurred: {error.message}</p>
+    );
 
   return (
     <div>

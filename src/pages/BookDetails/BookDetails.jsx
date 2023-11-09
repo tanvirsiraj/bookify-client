@@ -16,7 +16,7 @@ const BookDetails = () => {
   const [borrowedBook, setBorrowedBook] = useState({});
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/borrowedBook?email=${user.email}&id=${data._id}`;
+  const url = `https://bookify-server-xi.vercel.app/borrowedBook?email=${user.email}&id=${data._id}`;
   useEffect(() => {
     axios.get(url).then((res) => {
       console.log(res.data);
@@ -73,7 +73,7 @@ const BookDetails = () => {
       const qty = parseInt(quantity) - 1;
 
       // update book quantity
-      const url = `http://localhost:5000/updateQuantity/${_id}`;
+      const url = `https://bookify-server-xi.vercel.app/updateQuantity/${_id}`;
       axios
         .put(url, { qty })
         .then((res) => {
@@ -86,7 +86,7 @@ const BookDetails = () => {
 
       // added to borrowed Books
 
-      const urlSecond = "http://localhost:5000/borrowedBooks";
+      const urlSecond = "https://bookify-server-xi.vercel.app/borrowedBooks";
       axios
         .post(urlSecond, borrowedBooks)
         .then((res) => {

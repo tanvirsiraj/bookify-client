@@ -9,7 +9,7 @@ const BorrowedBooks = () => {
 
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/borrowedBooks?email=${user.email}`;
+  const url = `https://bookify-server-xi.vercel.app/borrowedBooks?email=${user.email}`;
   useEffect(() => {
     axios.get(url).then((res) => {
       console.log(res.data);

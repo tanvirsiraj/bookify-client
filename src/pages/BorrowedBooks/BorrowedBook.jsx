@@ -10,7 +10,7 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
   console.log(id, _id);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/returnedBook/${id}`)
+      .get(`https://bookify-server-xi.vercel.app/returnedBook/${id}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -26,7 +26,9 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
     console.log(data.quantity, qty);
 
     axios
-      .put(`http://localhost:5000/increaseQuantity/${id}`, { qty })
+      .put(`https://bookify-server-xi.vercel.app/increaseQuantity/${id}`, {
+        qty,
+      })
       .then((res) => {
         console.log(res.data);
       })
@@ -35,7 +37,7 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
       });
 
     axios
-      .delete(`http://localhost:5000/deleteBook/${_id}`)
+      .delete(`https://bookify-server-xi.vercel.app/deleteBook/${_id}`)
       .then((res) => {
         if (res.data.deletedCount > 0) {
           Swal.fire("Returned!", "Thank you for returning the book.");

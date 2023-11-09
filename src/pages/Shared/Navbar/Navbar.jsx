@@ -81,11 +81,11 @@ const Navbar = () => {
               <div className="lg:hidden    items-center ">
                 <div className="flex items-center mb-6">
                   <span className="text-white text-sm md:text-base">
-                    {user.displayName}
+                    {user?.displayName}
                   </span>
                   <div className="avatar">
                     <div className="w-10 md:w-12 rounded-full mx-2">
-                      <img src={user.photoURL} />
+                      <img src={user?.photoURL} />
                     </div>
                   </div>
                 </div>

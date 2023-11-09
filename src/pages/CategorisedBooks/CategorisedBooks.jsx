@@ -47,8 +47,8 @@ const CategorisedBooks = () => {
 
   if (isPending)
     return (
-      <div className="max-w-6xl mx-auto my-10 flex justify-center">
-        <span className="loading  loading-spinner loading-lg"></span>
+      <div className="max-w-6xl mx-auto my-44 flex justify-center">
+        <span className="loading  loading-spinner loading-lg text-primary-color"></span>
       </div>
     );
 
