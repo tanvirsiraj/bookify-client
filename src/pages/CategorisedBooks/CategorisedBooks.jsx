@@ -8,7 +8,7 @@ import CategorisedBook from "./CategorisedBook";
 
 const CategorisedBooks = () => {
   const { categoryName } = useParams();
-  console.log(categoryName);
+  // console.log(categoryName);
   const [categoryBook, setCategoryBook] = useState([]);
   const axiosSecure = useAxiosSecure();
 

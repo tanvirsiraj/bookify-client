@@ -2,7 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+
 import Swal from "sweetalert2";
 import axios from "axios";
 import gif1 from "../../assets/img/gif1.gif";
@@ -11,17 +11,18 @@ const BookDetails = () => {
   const data = useLoaderData();
   // console.log(data);
   const [currentQuantity, setCurrentQuantity] = useState(data.quantity || 0);
-  const { axiosSecure } = useAxiosSecure();
+  console.log(currentQuantity);
+
   const [borrowedBook, setBorrowedBook] = useState({});
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/borrowedBook?id=${data._id}`;
+  const url = `http://localhost:5000/borrowedBook?email=${user.email}&id=${data._id}`;
   useEffect(() => {
     axios.get(url).then((res) => {
       console.log(res.data);
       setBorrowedBook(res.data);
     });
-  }, []);
+  }, [url]);
   //   console.log(data);
   const {
     _id,
@@ -55,6 +56,7 @@ const BookDetails = () => {
       id: _id,
       img,
       name,
+      authorName,
       category,
       userName,
       email,
@@ -136,6 +138,7 @@ const BookDetails = () => {
               <button
                 className="bg-primary-color text-white py-1 px-3 rounded  duration-300 hover:bg-black capitalize"
                 onClick={handleBorrowClick}
+                disabled={currentQuantity === 0}
               >
                 Borrow
               </button>
