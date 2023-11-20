@@ -7,7 +7,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="bg-footer mt-2 md:mt-8 ">
+    <div className="bg-footer mt-2 md:mt-8 dark:bg-black text-black dark:text-white">
       <div className="footer-overlay"></div>
       <div className="max-w-6xl mx-auto text-center pt-20">
         <div className="flex items-center gap-2 justify-center">
@@ -28,21 +28,21 @@ const Footer = () => {
         <div className="flex gap-6 justify-center mt-4 items-center">
           <Link to="https://www.facebook.com/">
             {" "}
-            <FaFacebook className="text-[#3E63B1] text-3xl"></FaFacebook>
+            <FaFacebook className="text-[#3E63B1] text-3xl dark:text-white"></FaFacebook>
           </Link>
           <Link to="https://www.twitter.com/">
-            <AiFillTwitterCircle className="text-[#1CA2F2] text-3xl"></AiFillTwitterCircle>
+            <AiFillTwitterCircle className="text-[#1CA2F2] text-3xl dark:text-white"></AiFillTwitterCircle>
           </Link>
           <Link to="https://www.linkedin.com/">
             {" "}
-            <FaLinkedin className="text-[#0C65C3] text-3xl"></FaLinkedin>
+            <FaLinkedin className="text-[#0C65C3] text-3xl dark:text-white"></FaLinkedin>
           </Link>
           <Link to="https://www.instagram.com/">
-            <FaInstagramSquare className="text-gradient  from-purple-700 via-pink-700 to-red-500 text-3xl"></FaInstagramSquare>
+            <FaInstagramSquare className="text-gradient  from-purple-700 via-pink-700 to-red-500 text-3xl dark:text-white"></FaInstagramSquare>
           </Link>
           <Link to="https://www.youtube.com/">
             {" "}
-            <FaYoutube className="text-[#CE201F] text-4xl"></FaYoutube>
+            <FaYoutube className="text-[#CE201F] text-4xl dark:text-white"></FaYoutube>
           </Link>
         </div>
         <div className="md:flex justify-center items-center mt-6 gap-8">
@@ -80,7 +80,7 @@ const Footer = () => {
           </li>
         </div>
       </div>
-      <footer className="footer  py-4 border-t-2   text-base-content border-primary-color flex justify-center mt-10">
+      <footer className="footer  py-4 border-t-2   text-base-content border-primary-color flex justify-center mt-10 text-black dark:text-white">
         <p className="flex justify-center items-center text-lg">
           Copyright <AiOutlineCopyright className="-me-2" />
           All Right Reserved

@@ -66,8 +66,8 @@ const AddBook = () => {
   };
 
   return (
-    <div className="relative">
-      <div className="mt-32">
+    <div className="relative dark:bg-black">
+      <div className="pt-32">
         <div className=" max-w-6xl mx-auto text-center ">
           <form
             onSubmit={handleUpdate}

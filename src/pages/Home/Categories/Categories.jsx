@@ -47,13 +47,13 @@ const Categories = () => {
     <div className="mx-2 lg:mx-0">
       <div className="max-w-6xl mx-auto mt-10 md:mt-14 ">
         <div className=" text-center">
-          <h1 className="text-2xl md:text-4xl font-semibold mb-4">
+          <h1 className="text-2xl md:text-4xl font-semibold mb-4 text-black dark:text-white">
             Our Categories
           </h1>
 
           <div className="max-w-3xl mx-auto mb-10">
             <Marquee>
-              <p className="text-lg text-black">
+              <p className="text-lg text-black dark:text-white">
                 ---Our Categories include : Business | Computers & Tech | Health
                 & Fitness | Travel | Sports | Self-Help
                 <span className="me-4">---</span>

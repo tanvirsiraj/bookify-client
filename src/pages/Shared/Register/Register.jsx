@@ -55,10 +55,10 @@ const Register = () => {
   };
 
   return (
-    <div className="mt-8 md:mt-32 lg:mt-4 -mb-10 md:-mb-20">
-      <div className="hero-content max-w-6xl mx-auto text-center flex-col md:flex-row md:justify-between md:items-center">
-        <div className="h-full w-full ">
-          <img src={signup2Gif} className="h-full" />
+    <div className="mt-8 md:mt-32 lg:mt-4  md:-mb-8 ">
+      <div className="hero-content max-w-6xl mx-auto text-center flex-col md:flex-row md:justify-between md:items-center ">
+        <div className="h-full w-full overflow-hidden">
+          <img src={signup2Gif} className="h-full " />
         </div>
         <div className="h-full w-full">
           {" "}

@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FeedBackCard from "./FeedBackCard";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./FeedBack.css";
+import { AuthContext } from "../../../Context/AuthProvider";
 const FeedBack = () => {
   const [peoples, setPeoples] = useState([]);
+  const { theme, setTheme } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("/people.json")
@@ -45,10 +47,10 @@ const FeedBack = () => {
   return (
     <div className="mx-2 lg:mx-0 my-10 mb-10">
       <div className="max-w-6xl  mx-auto">
-        <h1 className="text-2xl md:text-4xl font-semibold mb-6 text-center">
+        <h1 className="text-2xl md:text-4xl font-semibold mb-6 text-center text-black dark:text-white">
           What People Say
         </h1>
-        <Slider {...settings} className="">
+        <Slider {...settings} className={theme === "dark" && "dark-slider"}>
           {peoples.map((people, index) => (
             <FeedBackCard people={people} key={index}></FeedBackCard>
           ))}

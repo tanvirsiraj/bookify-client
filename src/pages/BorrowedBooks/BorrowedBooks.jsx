@@ -9,7 +9,7 @@ const BorrowedBooks = () => {
 
   const { user } = useContext(AuthContext);
 
-  const url = `https://bookify-server-xi.vercel.app/borrowedBooks?email=${user.email}`;
+  const url = `http://localhost:5000/borrowedBooks?email=${user.email}`;
   useEffect(() => {
     axios.get(url).then((res) => {
       console.log(res.data);
@@ -18,8 +18,8 @@ const BorrowedBooks = () => {
   }, [url]);
 
   return (
-    <div>
-      <div className="max-w-6xl mx-auto mt-32">
+    <div className="dark:bg-black">
+      <div className="max-w-6xl mx-auto pt-32">
         <div className="mx-4 lg:mx-0">
           {borrowedBooks?.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 ">
@@ -34,7 +34,7 @@ const BorrowedBooks = () => {
             </div>
           ) : (
             <div className="text-center md:flex justify-center items-center">
-              <h2 className=" md:my-24 font-semibold">
+              <h2 className=" md:my-24 font-semibold text-black dark:text-white">
                 You have not borrowed any book yet{" "}
               </h2>
               <div className="flex justify-center">

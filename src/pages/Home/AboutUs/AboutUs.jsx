@@ -3,14 +3,16 @@ import banner2 from "../../../assets/img/banner2.jpg";
 const AboutUs = () => {
   return (
     <div className="mx-2 lg:mx-0 my-10 lg:my-16">
-      <div className=" max-w-6xl mx-auto bg-white">
+      <div className=" max-w-6xl mx-auto ">
         <div className="flex-col lg:flex justify-between items-center lg:flex-row-reverse gap-6 ">
           <div className="lg:w-1/2">
             <img src={banner2} className="h-auto" />
           </div>
           <div className="lg:w-1/2 mt-6">
-            <h1 className="text-2xl lg:text-5xl font-semibold ">About Us</h1>
-            <p className="py-4 text-sm lg:text-base">
+            <h1 className="text-2xl lg:text-5xl font-semibold text-black dark:text-white">
+              About Us
+            </h1>
+            <p className="py-4 text-sm lg:text-base text-black dark:text-white">
               Bookify, a user-friendly online platform, serves as a haven for
               book enthusiasts seeking literary adventures. With its intuitive
               interface and comprehensive database, Bookify streamlines the

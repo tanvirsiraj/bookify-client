@@ -63,7 +63,7 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-16 md:mt-32 -mb-10">
+    <div className="mt-16 md:mt-32 -mb-2">
       <div className="hero-content max-w-6xl mx-auto text-center grid gap-y-12 md:grid-cols-4">
         <div className="h-full col-span-2">
           <img src={loginGif} className="h-full" />

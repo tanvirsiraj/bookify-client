@@ -10,7 +10,7 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
   console.log(id, _id);
   useEffect(() => {
     axios
-      .get(`https://bookify-server-xi.vercel.app/returnedBook/${id}`)
+      .get(`http://localhost:5000/returnedBook/${id}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -26,7 +26,7 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
     console.log(data.quantity, qty);
 
     axios
-      .put(`https://bookify-server-xi.vercel.app/increaseQuantity/${id}`, {
+      .put(`http://localhost:5000/increaseQuantity/${id}`, {
         qty,
       })
       .then((res) => {
@@ -37,7 +37,7 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
       });
 
     axios
-      .delete(`https://bookify-server-xi.vercel.app/deleteBook/${_id}`)
+      .delete(`http://localhost:5000/deleteBook/${_id}`)
       .then((res) => {
         if (res.data.deletedCount > 0) {
           Swal.fire("Returned!", "Thank you for returning the book.");
@@ -53,7 +53,7 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
   };
 
   return (
-    <div className="py-4 bg-white shadow-md border rounded-lg relative grid grid-cols-2 items-center gap-2   px-2">
+    <div className=" py-4 bg-white shadow-md border rounded-lg relative grid grid-cols-2 items-center gap-2   px-2">
       <div className=" mx-auto  ">
         <img className="w-full h-60" src={img} alt="book" />
       </div>

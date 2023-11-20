@@ -2,6 +2,7 @@
 .slick-next {
   display: none !important;
 }
+
 .slick-dots li button:before {
   margin-top: 20px;
   font-size: 15px !important;
@@ -9,5 +10,11 @@
 
 .slick-dots li.slick-active button:before {
   font-size: 25px !important;
-  color: #ff4f01;
+  color: #ff4f01 !important;
+}
+.dark-slider .slick-dots li button:before {
+  color: white !important;
+}
+.dark-slider .slick-dots li.slick-active button:before {
+  color: #ff4f01 !important;
 }

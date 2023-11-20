@@ -67,9 +67,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://bookify-server-xi.vercel.app/bookDetails/${params.id}`
-          ),
+          fetch(`http://localhost:5000/bookDetails/${params.id}`),
       },
       {
         path: "/readBooks/:id",
@@ -79,9 +77,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://bookify-server-xi.vercel.app/bookDetails/${params.id}`
-          ),
+          fetch(`http://localhost:5000/bookDetails/${params.id}`),
       },
       {
         path: "/updateBook/:id",
@@ -91,7 +87,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://bookify-server-xi.vercel.app/updateBook/${params.id}`),
+          fetch(`http://localhost:5000/updateBook/${params.id}`),
       },
     ],
   },

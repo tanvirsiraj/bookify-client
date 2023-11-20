@@ -5,7 +5,7 @@ import FeedBack from "../FeedBack/FeedBack";
 
 const Home = () => {
   return (
-    <div className="">
+    <div className="dark:bg-black">
       <Banner></Banner>
       <Categories></Categories>
       <AboutUs></AboutUs>
