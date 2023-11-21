@@ -98,6 +98,7 @@ const BookDetails = () => {
               showConfirmButton: false,
               timer: 1500,
             });
+            setBorrowedBook(res.data);
           }
         })
         .catch((error) => {
@@ -107,7 +108,7 @@ const BookDetails = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto mt-32">
+    <div className="max-w-6xl mx-auto pt-32">
       <div className="mx-2 lg:mx-0 py-4 bg-white shadow-md border rounded-md relative    md:grid md:grid-cols-5 gap-4 md:items-center  px-2 ">
         <div className="flex gap-4 col-span-2 items-center ">
           <div className="">
@@ -119,13 +120,17 @@ const BookDetails = () => {
             <p className="text-primary-color text-sm ">By {authorName}</p>
             <p className="   text-gray-600  text-xs ">{category}</p>
 
-            <Rating
-              className="mt-2 "
-              style={{ maxWidth: 80 }}
-              value={rating}
-              readOnly
-            />
-            <p className="mt-1 text-sm">Qty: {currentQuantity}</p>
+            <div className="flex gap-1">
+              <Rating
+                className="mt-2"
+                style={{ maxWidth: 80 }}
+                value={rating}
+                readOnly
+              />
+
+              <p className="text-black text-sm mt-3">{rating}</p>
+            </div>
+            <p className="mt-1 text-sm text-black">Qty: {currentQuantity}</p>
             <div className="card-actions  mt-6">
               <Link
                 to={`/readBooks/${_id}`}
@@ -189,8 +194,8 @@ const BookDetails = () => {
               </dialog>
 
               <dialog id="my_modal_2" className="modal">
-                <div className="modal-box ">
-                  <p className="pt-4 mb-2 text-primary-color text-center text-lg">
+                <div className="modal-box bg-white">
+                  <p className="pt-4 mb-2 text-primary-color text-center text-lg ">
                     I know You have already borrowed this book.
                   </p>
                   <div className="flex justify-center">
@@ -199,7 +204,7 @@ const BookDetails = () => {
                   </div>
                   <div className="modal-action justify-center">
                     <form method="dialog" className="text-center">
-                      <button className="bg-primary-color text-white py-1 px-3 rounded   duration-300 hover:bg-black capitalize">
+                      <button className="bg-primary-color text-white py-1 px-3 rounded   duration-300 hover:bg-black capitalize ">
                         Close
                       </button>
                     </form>
@@ -210,8 +215,8 @@ const BookDetails = () => {
           </div>
         </div>
         <div className=" col-span-3 mt-4 md:mt-0 text-sm md:text-base">
-          <span className="font-semibold">Overview:</span>
-          <p>{description}</p>
+          <span className="font-semibold text-black">Overview:</span>
+          <p className="text-black">{description}</p>
         </div>
       </div>
     </div>

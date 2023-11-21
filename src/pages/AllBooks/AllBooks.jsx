@@ -34,8 +34,8 @@ const AllBooks = () => {
 
   if (isPending)
     return (
-      <div className="max-w-6xl mx-auto md:my-40 flex justify-center">
-        <span className="loading  loading-spinner loading-lg"></span>
+      <div className="max-w-6xl mx-auto md:py-40 flex justify-center ">
+        <span className="loading  loading-spinner loading-lg text-primary-color dark:text-white"></span>
       </div>
     );
 

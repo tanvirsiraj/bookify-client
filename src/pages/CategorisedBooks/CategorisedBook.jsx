@@ -15,12 +15,16 @@ const CategorisedBook = ({ data }) => {
         <p className="text-primary-color text-sm">By {authorName}</p>
         <p className="   text-gray-600  text-xs ">{category}</p>
 
-        <Rating
-          className="mt-2 "
-          style={{ maxWidth: 80 }}
-          value={rating}
-          readOnly
-        />
+        <div className="flex gap-1">
+          <Rating
+            className="mt-2"
+            style={{ maxWidth: 80 }}
+            value={rating}
+            readOnly
+          />
+
+          <p className="text-black text-sm mt-3">{rating}</p>
+        </div>
         <div className="card-actions  mt-6">
           <Link
             to={`/bookDetails/${_id}`}

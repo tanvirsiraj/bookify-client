@@ -55,7 +55,7 @@ const UpdateBook = () => {
 
   return (
     <div className="relative">
-      <div className="mt-32">
+      <div className="pt-32">
         <div className=" max-w-6xl mx-auto text-center ">
           <form
             onSubmit={handleUpdate}
@@ -73,7 +73,7 @@ const UpdateBook = () => {
                   defaultValue={img}
                   name="img"
                   placeholder="photo url..."
-                  className="bg-transparent border-b p-2 outline-none"
+                  className="bg-transparent border-b p-2 outline-none text-black"
                   required
                 />
               </div>
@@ -88,7 +88,7 @@ const UpdateBook = () => {
                   name="bookName"
                   defaultValue={name}
                   placeholder="book name..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                 />
               </div>
@@ -103,7 +103,7 @@ const UpdateBook = () => {
                   defaultValue={authorName}
                   name="author"
                   placeholder="author name..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                 />
               </div>
@@ -119,7 +119,7 @@ const UpdateBook = () => {
                   defaultValue={rating}
                   name="rating"
                   placeholder="rating..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                 />
               </div>
@@ -131,7 +131,7 @@ const UpdateBook = () => {
                 </label>
                 <select
                   value={selectedOption}
-                  className=" bg-transparent border-b outline-none p-2 w-full max-w-xs "
+                  className=" bg-transparent border-b outline-none p-2 w-full max-w-xs text-black"
                   onChange={handleOptionChange}
                 >
                   <option>Business</option>

@@ -7,7 +7,7 @@ import { useContext } from "react";
 import ThemeSwitcher from "../../../ThemeSwitcher/ThemeSwitcher";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, theme } = useContext(AuthContext);
   const [toggle, setToggle] = useState(true);
 
   const handleLogout = () => {
@@ -24,10 +24,10 @@ const Navbar = () => {
     <div className="bg-white dark:bg-black  fixed top-0 z-50 w-full  shadow-lg">
       <nav className="max-w-6xl mx-auto flex items-center justify-between py-4  text-black px-2 lg:px-0">
         <div className="flex items-center gap-2">
-          <BiBookReader className="text-primary-color text-3xl " />
+          <BiBookReader className="text-primary-color text-3xl dark:text-white" />
           <Link
             to="#"
-            className="text-2xl lg:text-3xl font-logo underline text-primary-color "
+            className="text-2xl lg:text-3xl font-logo underline text-primary-color dark:text-white"
           >
             Bookify
           </Link>
@@ -124,7 +124,7 @@ const Navbar = () => {
           </div>
           <div className="lg:hidden">
             {" "}
-            <label className="bg-none swap swap-rotate text-primary-color items-center">
+            <label className="bg-none swap swap-rotate text-primary-color items-center dark:text-white">
               {/* this hidden checkbox controls the state */}
               <input type="checkbox" onChange={() => setToggle(!toggle)} />
 

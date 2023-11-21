@@ -8,7 +8,7 @@ const Category = ({ category }) => {
         <img src={img} alt="Shoes" className="h-44 w-full rounded-md" />
       </div>
       <div className="text-center mb-4 mt-4">
-        <p className="font-semibold text-base">{categoryName}</p>
+        <p className="font-semibold text-black">{categoryName}</p>
         <Link
           to={`/books/${categoryName}`}
           className="duration-300 bg-primary-color text-white py-2 px-4  rounded-md inline-block mt-4   text-lg hover:bg-black hover:text-white"

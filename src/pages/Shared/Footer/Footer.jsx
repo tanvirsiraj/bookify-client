@@ -11,10 +11,10 @@ const Footer = () => {
       <div className="footer-overlay"></div>
       <div className="max-w-6xl mx-auto text-center pt-20">
         <div className="flex items-center gap-2 justify-center">
-          <BiBookReader className="text-primary-color text-3xl" />
+          <BiBookReader className="text-primary-color text-3xl dark:text-white" />
           <Link
             to="#"
-            className="text-2xl lg:text-3xl font-logo underline text-primary-color"
+            className="text-2xl lg:text-3xl font-logo underline text-primary-color dark:text-white"
           >
             Bookify
           </Link>
@@ -80,7 +80,7 @@ const Footer = () => {
           </li>
         </div>
       </div>
-      <footer className="footer  py-4 border-t-2   text-base-content border-primary-color flex justify-center mt-10 text-black dark:text-white">
+      <footer className="footer  py-4 border-t-2   text-base-content border-primary-color flex justify-center mt-10 text-black dark:text-white dark:border-white">
         <p className="flex justify-center items-center text-lg">
           Copyright <AiOutlineCopyright className="-me-2" />
           All Right Reserved

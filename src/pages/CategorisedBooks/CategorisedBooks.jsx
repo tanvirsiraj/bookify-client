@@ -56,10 +56,10 @@ const CategorisedBooks = () => {
 
   return (
     <div>
-      <div className="max-w-6xl mx-auto mt-12 mb-24">
+      <div className="max-w-6xl mx-auto pt-12 mb-24">
         {categoryBook?.length > 0 ? (
           <div className="mx-4 lg:mx-0">
-            <h2 className="mt-32 text-xl text-center md:text-3xl">
+            <h2 className="mt-32 text-xl text-center md:text-3xl text-black dark:text-white">
               All {categoryName} Related Books
             </h2>
 

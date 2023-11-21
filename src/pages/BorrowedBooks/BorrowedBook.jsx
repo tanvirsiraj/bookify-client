@@ -18,7 +18,7 @@ const BorrowedBook = ({ book, setBorrowedBooks, borrowedBooks }) => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   const handleUpdateQuantity = () => {
     // update book quantity

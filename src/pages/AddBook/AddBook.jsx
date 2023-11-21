@@ -84,7 +84,7 @@ const AddBook = () => {
                   type="text"
                   name="img"
                   placeholder="photo url..."
-                  className="bg-transparent border-b p-2 outline-none"
+                  className="bg-transparent border-b p-2 outline-none text-black"
                   required
                 />
               </div>
@@ -98,7 +98,7 @@ const AddBook = () => {
                   type="text"
                   name="bookName"
                   placeholder="book name..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                 />
               </div>
@@ -112,7 +112,7 @@ const AddBook = () => {
                   type="number"
                   name="quantity"
                   placeholder="quantity..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                   min={0}
                 />
@@ -127,7 +127,7 @@ const AddBook = () => {
                   type="text"
                   name="author"
                   placeholder="author name..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                 />
               </div>
@@ -142,7 +142,7 @@ const AddBook = () => {
                   type="text"
                   name="rating"
                   placeholder="rating..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                 />
               </div>
@@ -157,7 +157,7 @@ const AddBook = () => {
                   type="text"
                   name="description"
                   placeholder="short description..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black"
                   required
                 />
               </div>
@@ -171,7 +171,7 @@ const AddBook = () => {
                   type="text"
                   name="overview"
                   placeholder="overview..."
-                  className="bg-transparent border-b outline-none p-2"
+                  className="bg-transparent border-b outline-none p-2 text-black "
                   required
                 />
               </div>
@@ -183,7 +183,7 @@ const AddBook = () => {
                 </label>
                 <select
                   value={selectedOption}
-                  className=" bg-transparent border-b outline-none p-2 w-full max-w-xs "
+                  className=" bg-transparent border-b outline-none p-2 w-full max-w-xs text-black"
                   onChange={handleOptionChange}
                 >
                   <option>Business</option>

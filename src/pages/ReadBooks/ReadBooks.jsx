@@ -15,7 +15,7 @@ const ReadBooks = () => {
     setReadFull(overview);
   };
   return (
-    <div className="max-w-6xl mx-auto mt-32">
+    <div className="max-w-6xl mx-auto pt-32">
       <div className="mx-2 lg:mx-0 py-4 bg-white  rounded-lg relative      px-2 ">
         <div className="flex gap-4  items-center ">
           <div className="">
@@ -31,20 +31,23 @@ const ReadBooks = () => {
             </p>
             <p className="   text-gray-600  text-xs ">{category}</p>
 
-            <Rating
-              className="mt-2 "
-              style={{ maxWidth: 80 }}
-              value={rating}
-              readOnly
-            />
+            <div className="flex gap-1">
+              <Rating
+                className="mt-2"
+                style={{ maxWidth: 80 }}
+                value={rating}
+                readOnly
+              />
+
+              <p className="text-black text-sm mt-3">{rating}</p>
+            </div>
           </div>
         </div>
         <div className="  mt-4 text-sm md:text-base">
-          <p className="font-semibold ">Book Overview:</p>
+          <p className="font-semibold text-black">Book Overview:</p>
           {readFull ? (
             <div>
-              {" "}
-              <span>{overview}</span>
+              <span className="text-black">{overview}</span>
               <button
                 onClick={() => setReadFull(!readFull)}
                 className="ms-1 font-semibold hover:underline   text-primary-color"
@@ -55,7 +58,7 @@ const ReadBooks = () => {
           ) : (
             <div>
               {" "}
-              <span>{firstPortion}</span>
+              <span className="text-black">{firstPortion}</span>
               <button
                 onClick={() => setReadFull(!readFull)}
                 className="ms-1 font-semibold hover:underline text-primary-color"
