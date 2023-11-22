@@ -1,11 +1,9 @@
 # Bookify
 
-[Visit our website](https://bookify-client.web.app)
-
 ## Projects Features
 
 - This website focuses on Library Management, allowing users to borrow and return books across
-  different categories. Users can also add or update books.
+  different categories. Add, update, delete will be handled by librarian.
 
 - There are Home, Add Book, All Books, Borrowed
   Books, and Login in the navbar. In Home page there are a banner section and a 6 cards of category section. On clicking a category name, the user will be redirected to the books related to specific category.
@@ -24,7 +22,9 @@
   card from the "Borrowed Books" page.
 - Clicking on the “Read” button will take the user to a different page where the user can read
   some content of that book.
-- In All Books page user will see all categorised books. Each book will have an Update Button. Clicking on the `Update button` will redirect the user
+- In All Books page librarian will see all categorised books. Each book will have an Update Button. Clicking on the `Update button` will redirect the librarian
   to a form page where user can update a book.
+- In Add Book page only librarian
+  add a book in the database.
 - The website have a authentication system. There's Registration and Login Page.
-- This website is responsive in all device.
+- This website is responsive in all devices.
