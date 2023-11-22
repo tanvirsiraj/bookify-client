@@ -6,8 +6,14 @@ import { AuthContext } from "../../Context/AuthProvider";
 import Swal from "sweetalert2";
 import axios from "axios";
 import gif1 from "../../assets/img/gif1.gif";
+import "./BookDetails.css";
 
 const BookDetails = () => {
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  const [minDate, setMinDate] = useState(tomorrow.toISOString().split("T")[0]);
+
   const data = useLoaderData();
   // console.log(data);
   const [currentQuantity, setCurrentQuantity] = useState(data.quantity || 0);
@@ -108,7 +114,11 @@ const BookDetails = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto pt-32">
+    <div
+      className="max-w-6xl mx-auto pt-32"
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+    >
       <div className="mx-2 lg:mx-0 py-4 bg-white shadow-md border rounded-md relative    md:grid md:grid-cols-5 gap-4 md:items-center  px-2 ">
         <div className="flex gap-4 col-span-2 items-center ">
           <div className="">
@@ -149,7 +159,7 @@ const BookDetails = () => {
               </button>
 
               <dialog id="my_modal_1" className="modal">
-                <div className="modal-box">
+                <div className="modal-box bg-white ">
                   <div className="text-center">
                     <form onSubmit={handleSubmit}>
                       <div className="flex justify-between">
@@ -162,8 +172,9 @@ const BookDetails = () => {
                           <input
                             type="date"
                             name="borrowDate"
-                            className="bg-transparent border-b-2 border-b-[#302f2f4f] p-2 outline-none"
+                            className="bg-transparent border-b-2 border-b-[#302f2f4f] p-2 outline-none text-black "
                             required
+                            min={new Date().toISOString().split("T")[0]} // Set the minimum date to today
                           />
                         </div>
                         <div className="form-control">
@@ -175,8 +186,9 @@ const BookDetails = () => {
                           <input
                             type="date"
                             name="returnDate"
-                            className="bg-transparent border-b-2 border-b-[#302f2f4f] p-2 outline-none"
+                            className="bg-transparent border-b-2 border-b-[#302f2f4f] p-2 outline-none text-black "
                             required
+                            min={minDate}
                           />
                         </div>
                       </div>

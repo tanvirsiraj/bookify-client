@@ -10,7 +10,7 @@ const AllBooks = () => {
   const url = `/allbooks`;
 
   const { isPending, error, data } = useQuery({
-    queryKey: ["todos"],
+    queryKey: ["allBooks"],
     queryFn: () =>
       axiosSecure.get(url).then((res) => {
         return res.data;

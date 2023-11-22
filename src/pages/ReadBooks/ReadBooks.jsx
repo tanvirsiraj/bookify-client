@@ -16,8 +16,12 @@ const ReadBooks = () => {
   };
   return (
     <div className="max-w-6xl mx-auto pt-32">
-      <div className="mx-2 lg:mx-0 py-4 bg-white  rounded-lg relative      px-2 ">
-        <div className="flex gap-4  items-center ">
+      <div className="mx-2 lg:mx-0 py-4 bg-white  rounded-lg relative   px-2 ">
+        <div
+          className="flex gap-4  items-center "
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <div className="">
             <img className="w-full h-60" src={img} alt="book" />
           </div>
@@ -43,7 +47,11 @@ const ReadBooks = () => {
             </div>
           </div>
         </div>
-        <div className="  mt-4 text-sm md:text-base">
+        <div
+          className="  mt-4 text-sm md:text-base"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <p className="font-semibold text-black">Book Overview:</p>
           {readFull ? (
             <div>

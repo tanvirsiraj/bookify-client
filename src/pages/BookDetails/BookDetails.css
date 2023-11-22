@@ -1,0 +1,5 @@
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invert the colors of the default icon */
+  color: red; /* Change the color of the icon */
+  cursor: pointer;
+}

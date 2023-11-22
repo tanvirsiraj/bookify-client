@@ -5,7 +5,11 @@ import "@smastrom/react-rating/style.css";
 const SingleBook = ({ book }) => {
   const { _id, img, name, authorName, category, rating } = book;
   return (
-    <div className="py-4 bg-white shadow-md border rounded-lg relative grid grid-cols-2 items-center gap-2   px-2">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+      className="py-4 bg-white shadow-md border rounded-lg relative grid grid-cols-2 items-center gap-2   px-2"
+    >
       <div className=" mx-auto  ">
         <img className="w-full h-60" src={img} alt="book" />
       </div>

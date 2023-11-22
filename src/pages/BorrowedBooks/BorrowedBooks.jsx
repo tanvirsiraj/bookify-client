@@ -1,21 +1,39 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
-import axios from "axios";
 import BorrowedBook from "./BorrowedBook";
 import gif2 from "../../assets/img/gif2.gif";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const BorrowedBooks = () => {
+  const axiosSecure = useAxiosSecure();
   const [borrowedBooks, setBorrowedBooks] = useState([]);
 
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/borrowedBooks?email=${user.email}`;
+  const url = `/borrowedBooks?email=${user.email}`;
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["borrwedBooks"],
+    queryFn: () =>
+      axiosSecure.get(url).then((res) => {
+        return res.data;
+      }),
+  });
   useEffect(() => {
-    axios.get(url).then((res) => {
-      console.log(res.data);
-      setBorrowedBooks(res.data);
-    });
-  }, [url]);
+    if (data) {
+      setBorrowedBooks(data);
+    }
+  }, [data]);
+
+  if (isPending)
+    return (
+      <div className="max-w-6xl mx-auto my-44 flex justify-center">
+        <span className="loading  loading-spinner loading-lg text-primary-color"></span>
+      </div>
+    );
+
+  if (error) return "An error has occurred: " + error.message;
 
   return (
     <div className="dark:bg-black">

@@ -5,10 +5,18 @@ const AboutUs = () => {
     <div className="mx-2 lg:mx-0 my-10 lg:my-16">
       <div className=" max-w-6xl mx-auto ">
         <div className="flex-col lg:flex justify-between items-center lg:flex-row-reverse gap-6 ">
-          <div className="lg:w-1/2">
+          <div
+            className="lg:w-1/2"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          >
             <img src={banner2} className="h-auto" />
           </div>
-          <div className="lg:w-1/2 mt-6">
+          <div
+            className="lg:w-1/2 mt-6"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
             <h1 className="text-2xl lg:text-5xl font-semibold text-black dark:text-white">
               About Us
             </h1>

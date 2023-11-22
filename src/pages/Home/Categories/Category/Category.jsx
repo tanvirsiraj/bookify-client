@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 const Category = ({ category }) => {
   const { categoryName, img } = category;
   return (
-    <div className="card duration-500 cursor-pointer bg-white shadow-md rounded-md flex justify-between">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+      className="card duration-500 cursor-pointer bg-white shadow-md rounded-md flex justify-between"
+    >
       <div className="flex justify-center">
         <img src={img} alt="Shoes" className="h-44 w-full rounded-md" />
       </div>

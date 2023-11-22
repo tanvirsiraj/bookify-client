@@ -59,11 +59,11 @@ const CategorisedBooks = () => {
       <div className="max-w-6xl mx-auto pt-12 mb-24">
         {categoryBook?.length > 0 ? (
           <div className="mx-4 lg:mx-0">
-            <h2 className="mt-32 text-xl text-center md:text-3xl text-black dark:text-white">
+            <h2 className=" mt-14 lg:mt-20 text-xl text-center md:text-3xl text-black dark:text-white ">
               All {categoryName} Related Books
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 mt-8">
               {categoryBook.map((data) => (
                 <CategorisedBook key={data._id} data={data}></CategorisedBook>
               ))}
